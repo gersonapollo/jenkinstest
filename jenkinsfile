@@ -5,7 +5,7 @@ pipeline {
         stage ('Compilation Stage') {
             steps{
                 parallel 'Compilation': {
-                    sh "./mvnw clean install -DskipTests"
+                    sh "mvn clean install -DskipTests"
                 }
             }
         }
