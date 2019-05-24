@@ -3,8 +3,10 @@ pipeline {
 
     stages {
         stage ('Compilation Stage') {
-            parallel 'Compilation': {
-                sh "./mvnw clean install -DskipTests"
+            steps{
+                parallel 'Compilation': {
+                    sh "./mvnw clean install -DskipTests"
+                }
             }
         }
 
